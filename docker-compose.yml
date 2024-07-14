@@ -27,4 +27,4 @@ services:
     depends_on:
       - backend
 
-root@ip-172-31-90-73:~/wanderlust# 
+
