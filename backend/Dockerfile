@@ -1,10 +1,10 @@
-# Use the official Node.js image with a recent version
-FROM node:18
+# Use the official Node.js image with a specific version
+FROM node:21
 
 # Set the working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy the package.json and package-lock.json files
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
@@ -12,6 +12,9 @@ RUN npm install
 
 # Copy the rest of the application files
 COPY . .
+
+# Copy environment variables file
+COPY .env.sample .env.local
 
 # Expose the port the app runs on
 EXPOSE 5000
